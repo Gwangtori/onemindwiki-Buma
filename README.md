@@ -1,7 +1,7 @@
 ## New_Buma-openNAMU
 오픈나무 Buma를 최대한 기존 스킨처럼 변경한 스킨입니다.
 
-## 사용법
+## 적용 방법
 다운 받고 폴더 이름을 "newbuma"로 변경해서 "views"에 넣어주세요.
 
 ## 개발 예정
@@ -10,7 +10,7 @@
 ## 개발 불가
 현재 스킨 개조 중
 
-## 저작권
+## 라이선스
 Copyright (C) 2017 LiteHell
 
 This program is free software: you can redistribute it and/or modify
