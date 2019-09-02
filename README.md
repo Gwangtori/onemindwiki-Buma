@@ -1,4 +1,4 @@
-## New_Buma-openNAMU
+## New Buma
  * 오픈나무 Buma를 최대한 기존 스킨처럼 변경한 스킨입니다.
 
 ## 개발 상황
