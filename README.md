@@ -1,8 +1,9 @@
+![image](https://user-images.githubusercontent.com/53139020/64109318-27643300-cdba-11e9-8f00-c1a731575e47.png)
 ## New Buma
  * 오픈나무 Buma를 최대한 기존 스킨처럼 변경한 스킨입니다.
 
 ## 개발 상황
- * 90% 검색만 수정하면 끝
+ * 95% 검색 버그 수정 
 
 ## 적용 방법
  * 다운 받고 폴더 이름을 "newbuma"로 변경해서 "views"에 넣어주세요.
