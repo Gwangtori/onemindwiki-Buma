@@ -1,5 +1,5 @@
 ![image](https://user-images.githubusercontent.com/53139020/64109318-27643300-cdba-11e9-8f00-c1a731575e47.png)
-## New Buma
+## onamuBuma
  * 오픈나무 Buma를 최대한 기존 스킨처럼 변경한 스킨입니다.
 
 ## 개발 상황
