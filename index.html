@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{imp[0]}} - {{imp[1][0]}}</title>
+        <title>{{imp[0]}}{% if imp[3][0] != 0 %}{{ imp[3][0] }}{% endif %} - {{imp[1][0]}}</title>
         <link rel="stylesheet" href="/views/main_css/main.css">
         <link rel="stylesheet" href="/views/onamubuma/css/bootstrap-custom.css">
         <link rel="stylesheet" href="/views/onamubuma/css/bulma.css">
@@ -52,7 +52,7 @@
                             <a class="navbar-item" href="/random">
                                 <span class="icon">
                                     <i class="fas fa-random"></i>
-                                </span> RandomPage</a>
+                                </span> </a>
                         </div>
                     </div>
                 </div>
@@ -188,7 +188,7 @@
                 <div class="container">
                     <div class="tabs is-left is-boxed" id="wiki-article-menu">
                         <ul>
-                            {% if menu == 0 %}
+                            {% if imp[3][0] != ' (편집)' and imp[3][1] == 0 and imp[3][0] != ' (이동)' and imp[3][0] != ' (삭제)' and imp[3][0] != ' (역링크)' imp[3][0] != ' (역사)' and imp[3][0] != ' (ACL)' %}
 				<li class="is-active">
 					<a href="#">
 						<span class="icon">
@@ -199,7 +199,7 @@
 				</li>
 				{% else %}
 					<ul>
-						<li class="is-active">
+						<li{% if imp[3][1] != 0 %} class="is-active"{% endif %}>
 							<a href="/w/{{imp[0]}}">
 								<span class="icon">
 									<i class="fas fa-eye"></i>
@@ -207,7 +207,7 @@
 								<span class="wiki-article-menu-text is-hidden-touch"> 읽기</span>
 							</a>
 						</li>
-						<li>
+						<li{% if imp[3][0] == ' (편집)' %} class=is-active{% endif %}>
 							<a href="/edit/{{imp[0]}}" class="edit-anchor">
 								<span class="icon">
 									<i class="fas fa-edit"></i>
@@ -215,7 +215,7 @@
 								<span class="wiki-article-menu-text is-hidden-touch"> 편집</span>
 							</a>
 						</li>
-						<li>
+						<li{% if imp[3][0] == ' (토론)' %} class=is-active{% endif %}>
 										<a href="/topic/{{imp[0]}}">
 										<span class="icon">
 										<i class="far fa-comments"></i>
@@ -223,7 +223,7 @@
 										<span class="wiki-article-menu-text is-hidden-touch"> 토론</span>
 										</a>
 									</li>
-									<li>
+									<li{% if imp[3][0] == ' (이동)' %} class=is-active{% endif %}>
 										<a href="/move/{{imp[0]}}">
 										<span class="icon">
 										<i class="fas fa-arrow-right"></i>
@@ -231,7 +231,7 @@
 										<span class="wiki-article-menu-text is-hidden-touch"> 이동</span>
 										</a>
 									</li>
-									<li>
+									<li{% if imp[3][0] == ' (삭제)' %} class=is-active{% endif %}>
 										<a href="/delete/{{imp[0]}}">
 										<span class="icon">
 										<i class="far fa-trash-alt"></i>
@@ -239,7 +239,7 @@
 										<span class="wiki-article-menu-text is-hidden-touch"> 삭제</span>
 										</a>
 									</li>
-									<li>
+									<li{% if imp[3][0] == ' (역링크)' %} class=is-active{% endif %}>
 										<a href="/xref/{{imp[0]}}">
 										<span class="icon">
 										<i class="fas fa-random"></i>
@@ -247,7 +247,7 @@
 										<span class="wiki-article-menu-text is-hidden-touch"> 역링크</span>
 										</a>
 									</li>
-									<li>
+									<li{% if imp[3][0] == ' (역사)' %} class=is-active{% endif %}>
 										<a href="/history/{{imp[0]}}" class="history-anchor">
 										<span class="icon">
 										<i class="fas fa-history"></i>
@@ -255,7 +255,7 @@
 										<span class="wiki-article-menu-text is-hidden-touch"> 역사</span>
 										</a>
 									</li>
-									<li>
+									<li{% if imp[3][0] == ' (ACL)' %} class=is-active{% endif %}>
 										<a href="/acl/{{imp[0]}}">
 										<span class="icon">
 										<i class="fas fa-key"></i>
