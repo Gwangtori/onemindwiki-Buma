@@ -188,7 +188,13 @@
                 <div class="container">
                     <div class="tabs is-left is-boxed" id="wiki-article-menu">
                         <ul>
-                            {% if imp[3][0] != ' (편집)' and imp[3][1] == 0 and imp[3][0] != ' (이동)' and imp[3][0] != ' (삭제)' and imp[3][0] != ' (역링크)' imp[3][0] != ' (역사)' and imp[3][0] != ' (ACL)' %}
+                            {% if imp[3][0] != ' (편집)' and
+				imp[3][1] == 0 and
+				imp[3][0] != ' (이동)' and
+				imp[3][0] != ' (삭제)' and
+				imp[3][0] != ' (역링크)' and
+				imp[3][0] != ' (역사)' and
+				imp[3][0] != ' (ACL)' %}
 				<li class="is-active">
 					<a href="#">
 						<span class="icon">
