@@ -8,8 +8,8 @@
         <link rel="stylesheet" href="/views/onamubuma/css/bulma.css.map">
         <link rel="stylesheet" href="/views/onamubuma/css/jquery-ui.min.css">
         <link rel="stylesheet" href="/views/onamubuma/css/fa-svg-with-js.css">
-        <link rel="stylesheet" href="/views/onamubuma/css/layout.css">
         <link rel="stylesheet" href="/views/onamubuma/css/plus.css">
+        <link rel="stylesheet" href="/views/onamubuma/css/layout.css">
         <script type="text/javascript" src="/views/onamubuma/js/jquery.min.js"></script>
         <script type="text/javascript" src="/views/onamubuma/js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="/views/onamubuma/js/bootstrap.min.js"></script>
@@ -17,6 +17,7 @@
         <script type="text/javascript" src="/views/onamubuma/js/fontawesome-all.min.js"></script>
         {{imp[1][5]|safe}}
         {{imp[2][3]|safe}}
+        {{imp[3][3]|safe}}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     </head>
     <body class="buma">
@@ -188,17 +189,17 @@
                 <div class="container">
                     <div class="tabs is-left is-boxed" id="wiki-article-menu">
                         <ul>
-                            {% if imp[3][0] != ' (편집)' and
+                            {% if imp[3][0] != '(편집)' and
 				imp[3][1] == 0 and
-				imp[3][0] != ' (이동)' and
-				imp[3][0] != ' (삭제)' and
-				imp[3][0] != ' (토론)' and
-				imp[3][0] != ' (토론 목록)' and
-				imp[3][0] != ' (닫힌 토론)' and
-				imp[3][0] != ' (합의된 토론)' and
-				imp[3][0] != ' (역링크)' and
-				imp[3][0] != ' (역사)' and
-				imp[3][0] != ' (ACL)' %}
+				imp[3][0] != '(이동)' and
+				imp[3][0] != '(삭제)' and
+				imp[3][0] != '(토론)' and
+				imp[3][0] != '(토론 목록)' and
+				imp[3][0] != '(닫힌 토론)' and
+				imp[3][0] != '(합의된 토론)' and
+				imp[3][0] != '(역링크)' and
+				imp[3][0] != '(역사)' and
+				imp[3][0] != '(ACL)' %}
 				<li class="is-active">
 					<a href="#">
 						<span class="icon">
@@ -217,7 +218,7 @@
 								<span class="wiki-article-menu-text is-hidden-touch"> 읽기</span>
 							</a>
 						</li>
-						<li{% if imp[3][0] == ' (편집)' %} class=is-active{% endif %}>
+						<li{% if imp[3][0] == '(편집)' %} class=is-active{% endif %}>
 							<a href="/edit/{{imp[0]}}" class="edit-anchor">
 								<span class="icon">
 									<i class="fas fa-edit"></i>
@@ -225,7 +226,7 @@
 								<span class="wiki-article-menu-text is-hidden-touch"> 편집</span>
 							</a>
 						</li>
-						<li{% if imp[3][0] == ' (토론)' or imp[3][0] == ' (토론 목록)' or imp[3][0] == ' (합의된 토론)' or imp[3][0] == ' (닫힌 토론)' %} class=is-active{% endif %}>
+						<li{% if imp[3][0] == '(토론)' or imp[3][0] == '(토론 목록)' or imp[3][0] == '(합의된 토론)' or imp[3][0] == '(닫힌 토론)' %} class=is-active{% endif %}>
 										<a href="/topic/{{imp[0]}}">
 										<span class="icon">
 										<i class="far fa-comments"></i>
@@ -233,7 +234,7 @@
 										<span class="wiki-article-menu-text is-hidden-touch"> 토론</span>
 										</a>
 									</li>
-									<li{% if imp[3][0] == ' (이동)' %} class=is-active{% endif %}>
+									<li{% if imp[3][0] == '(이동)' %} class=is-active{% endif %}>
 										<a href="/move/{{imp[0]}}">
 										<span class="icon">
 										<i class="fas fa-arrow-right"></i>
@@ -241,7 +242,7 @@
 										<span class="wiki-article-menu-text is-hidden-touch"> 이동</span>
 										</a>
 									</li>
-									<li{% if imp[3][0] == ' (삭제)' %} class=is-active{% endif %}>
+									<li{% if imp[3][0] == '(삭제)' %} class=is-active{% endif %}>
 										<a href="/delete/{{imp[0]}}">
 										<span class="icon">
 										<i class="far fa-trash-alt"></i>
@@ -249,7 +250,7 @@
 										<span class="wiki-article-menu-text is-hidden-touch"> 삭제</span>
 										</a>
 									</li>
-									<li{% if imp[3][0] == ' (역링크)' %} class=is-active{% endif %}>
+									<li{% if imp[3][0] == '(역링크)' %} class=is-active{% endif %}>
 										<a href="/xref/{{imp[0]}}">
 										<span class="icon">
 										<i class="fas fa-random"></i>
@@ -257,7 +258,7 @@
 										<span class="wiki-article-menu-text is-hidden-touch"> 역링크</span>
 										</a>
 									</li>
-									<li{% if imp[3][0] == ' (역사)' %} class=is-active{% endif %}>
+									<li{% if imp[3][0] == '(역사)' %} class=is-active{% endif %}>
 										<a href="/history/{{imp[0]}}" class="history-anchor">
 										<span class="icon">
 										<i class="fas fa-history"></i>
@@ -265,7 +266,7 @@
 										<span class="wiki-article-menu-text is-hidden-touch"> 역사</span>
 										</a>
 									</li>
-									<li{% if imp[3][0] == ' (ACL)' %} class=is-active{% endif %}>
+									<li{% if imp[3][0] == '(ACL)' %} class=is-active{% endif %}>
 										<a href="/acl/{{imp[0]}}">
 										<span class="icon">
 										<i class="fas fa-key"></i>
