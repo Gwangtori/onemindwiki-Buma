@@ -7918,7 +7918,7 @@ label.panel-block:hover {
 
 .tabs.is-boxed a {
   border: 1px solid transparent;
-  border-radius: 3px 3px 0 0;
+  border-radius: 4px 4px 0 0;
 }
 
 .tabs.is-boxed a:hover {
