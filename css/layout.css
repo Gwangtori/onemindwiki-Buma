@@ -36,21 +36,29 @@
   margin-left: 20px;
   border: 1px solid black;
 }
-.res .r-head {
+table#toron {
+	background: none;
+}
+table#toron tbody tr:first-child td {
   padding: 10px 12px 5px 15px;
   background: #aaaaaa;
   border-radius: 4px 4px 0px 0px;
+  border: none;
 }
-.res .r-head.first-author {
+table#toron tbody tr:first-child td#toron_color_green {
   background: #70cc93;
+}
+table#toron tbody tr:first-child td#toron_color_blue {
+  background: #ffcbf9;
 }
 .res .r-head .pull-right {
   float: right;
 }
-.res .r-body {
+table#toron tbody tr:last-child td {
   padding: 5px 10px 10px 15px;
   background: #e8e8e8;
   border-radius: 0px 0px 4px 4px;
+  border: none;
 }
 .res .r-body.r-hidden-body {
   background: black;
