@@ -1,22 +1,14 @@
-![image](https://user-images.githubusercontent.com/53139020/64109318-27643300-cdba-11e9-8f00-c1a731575e47.png)
-## onamuBuma
- * 오픈나무 Buma를 최대한 기존 스킨처럼 변경한 스킨입니다.
+## 개요
+한마음위키에서 사용하는 Buma 스킨입니다.
 
-## 적용 방법
- * 다운 받고 폴더 이름을 "onamubuma"로 변경해서 "views"에 넣어주세요.
+## 사용법
+다운 받고 폴더 이름을 `buma`로 변경한 후 `views`에 넣으면 됩니다.
+
+## Git 명령어
+```
+git clone https://github.com/Gwangtori/onemindwiki-Buma.git buma
+```
 
 ## 라이선스
-Copyright (C) 2017 LiteHell
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+- 해당 스킨은 [onamuBuma](https://github.com/TZNT/onamuBuma)를 포크한 스킨이며, [the seed의 Buma](https://github.com/LiteHell/theseed-skin-buma)가 원본임을 알립니다.
+- `js > skin_set.js` 파일과, `index.html` 일부분은 오픈나무의 공식 스킨, tenshi에서 가져온 부분이 있습니다. 해당 부분은 **BSD 3-Clause**로 배포됨을 알립니다.

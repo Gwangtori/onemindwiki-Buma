@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{imp[0]}} {% if imp[3][0] != 0 %}{{ imp[3][0] }}{% endif %} - {{imp[1][0]}}</title>
-        <link rel="stylesheet" href="/views/main_css/main.css">
-        <link rel="stylesheet" href="/views/onamubuma/css/bootstrap-custom.css">
-        <link rel="stylesheet" href="/views/onamubuma/css/bulma.css">
-        <link rel="stylesheet" href="/views/onamubuma/css/bulma.css.map">
-        <link rel="stylesheet" href="/views/onamubuma/css/jquery-ui.min.css">
-        <link rel="stylesheet" href="/views/onamubuma/css/fa-svg-with-js.css">
-        <link rel="stylesheet" href="/views/onamubuma/css/layout.css">
-        <link rel="stylesheet" href="/views/onamubuma/css/plus.css">
-        <script type="text/javascript" src="/views/onamubuma/js/jquery.min.js"></script>
-        <script type="text/javascript" src="/views/onamubuma/js/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="/views/onamubuma/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="/views/onamubuma/js/layout.js"></script>
-        <script type="text/javascript" src="/views/onamubuma/js/fontawesome-all.min.js"></script>
+        <meta charset="utf-8">
+        {% if imp[3][0] != 0 %}
+            <title>{{imp[0]}} {{imp[3][0]}} - {{imp[1][0]}}</title>
+        {% else %}
+            <title>{{imp[0]}} - {{imp[1][0]}}</title>
+        {% endif %}
+        <link rel="stylesheet" href="/views/buma/css/bootstrap-custom.css">
+        <link rel="stylesheet" href="/views/buma/css/bulma.css">
+        <link rel="stylesheet" href="/views/buma/css/bulma.css.map">
+        <link rel="stylesheet" href="/views/buma/css/jquery-ui.min.css">
+        <link rel="stylesheet" href="/views/buma/css/fa-svg-with-js.css">
+        <link rel="stylesheet" href="/views/buma/css/layout.css">
+        <link rel="stylesheet" href="/views/buma/css/plus.css">
+		<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
+        <script type="text/javascript" src="/views/buma/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/views/buma/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/views/buma/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/views/buma/js/layout.js"></script>
+        <script type="text/javascript" src="/views/buma/js/fontawesome-all.min.js"></script>
+		{{imp[3][3]|safe}}
+		<script type="text/javascript" src="/views/liberty/js/skin_set.js"></script>
+		<script>main_load(); window.addEventListener('DOMContentLoaded', skin_set);</script>
         {{imp[1][5]|safe}}
         {{imp[2][3]|safe}}
-        {{imp[3][3]|safe}}
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        {% if imp[3][0] != 0 %}
+            <meta name="title" content="{{imp[0]}}{{imp[3][0]}} - {{imp[1][0]}}">
+        {% else %}
+            <meta name="title" content="{{imp[0]}} - {{imp[1][0]}}">
+        {% endif %}
+        <meta name="keywords" content="{{imp[0]}}">
+        {% if imp[2][12] != 0 and imp[2][12] == 'w' %}
+            <meta name="description" content="{{data|cut_100}}">
+        {% endif %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body class="buma">
         <div id="top" class="nav navbar" role="navigation" aria-label="main navigation">
@@ -35,25 +52,38 @@
                     <a href="/recent_changes" class="navbar-item">
                         <span class="icon">
                             <i class="fas fa-binoculars"></i>
-                        </span> 최근 변경</a>
+                        </span> {{'recent_change'|load_lang}}</a>
                     <a href="/recent_discuss" class="navbar-item">
                         <span class="icon">
                             <i class="far fa-comments"></i>
-                        </span> 최근 토론</a>
+                        </span> {{'recent_discussion'|load_lang}}</a>
+					<a href="/random" class="navbar-item">
+                        <span class="icon">
+                            <i class="fa fa-random"></i>
+                        </span> {{'random'|load_lang}}</a>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a href="#" class="navbar-link">
                             <span class="icon">
                                 <i class="fas fa-cogs"></i>
                             </span> 도구</a>
                         <div class="navbar-dropdown">
-                            <a class="navbar-item" href="/other">
-                                <span class="icon">
-                                    <i class="fas fa-cogs"></i>
-                                </span> 기타</a>
-                            <a class="navbar-item" href="/random">
-                                <span class="icon">
-                                    <i class="fas fa-random"></i>
-                                </span> </a>
+                            <a class="dropdown-item" href="/skin_set"><span class="fa fa-cog"></span><span class="hide-title"> {{'skin_set'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/upload"><span class="fa fa-upload"></span><span class="hide-title"> {{'upload'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/admin_list"><span class="fa fa-user-secret"></span><span class="hide-title"> {{'admin_list'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/admin_log"><span class="fa fa-outdent"></span><span class="hide-title"> {{'authority_use_list'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/title_index"><span class="fa fa-folder-open"></span><span class="hide-title"> {{'all_document_list'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/please"><span class="fas fa-chain-broken"></span><span class="hide-title"> {{'need_document'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/long_page"><span class="fas fa-file-text-o"></span><span class="hide-title"> {{'long_page'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/short_page"><span class="fas fa-file-o"></span><span class="hide-title"> {{'short_page'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/old_page"><span class="fa fa-pause"></span><span class="hide-title"> {{'old_page'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/block_log"><span class="fa fa-low-vision"></span><span class="hide-title"> {{'recent_ban'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/user_log"><span class="fa fa-users"></span><span class="hide-title"> {{'member_list'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/image_file_list"><span class="fas fa-file-image-o"></span><span class="hide-title"> {{'image_file_list'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/vote"><span class="fas fa-ticket"></span><span class="hide-title"> {{'vote_list'|load_lang}}</span></a>
+                            <a class="dropdown-item" href="/other"><span class="fa fa-plus-circle"></span><span class="hide-title"> {{'tool'|load_lang}}</span></a>
+                            {% if imp[2][9] != '0' %}
+                                <a class="dropdown-item" href="/manager/1"><span class="fa fa-sliders"></span><span class="hide-title"> {{'admin_tool'|load_lang}}</span></a>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -181,7 +211,7 @@
 						{% if imp[3][1] == 0 %}
 							Powered by openNAMU
 						{% else %}
-							{{imp[3][1]}}+0900에 마지막으로 수정됐습니다.
+							{{imp[3][1]}}에 마지막으로 수정됐습니다.
 						{% endif %}
                 </div>
             </div>
@@ -205,7 +235,7 @@
 						<span class="icon">
 							<i class="fas fa-cogs"></i>
 						</span>
-						<span class="wiki-article-menu-text is-hidden-touch"> 특수문서</span>
+						<span class="wiki-article-menu-text is-hidden-touch"> 특수 문서</span>
 					</a>
 				</li>
 				{% else %}
@@ -282,7 +312,9 @@
         </section>
         <section class="section">
             <div class="container">
-                {{data|safe}}
+				<div id="fix_data" class="col-md-10 col-md-offset-1 mar-b-30">
+                	{{data|safe}}
+				</div>
             </div>
             <div id="nav_bar">
                 <div id="go_top">
@@ -299,7 +331,7 @@
         </section>
         <footer class="footer">
             <div class="container">
-                <div class="content has-text-centered">
+                <div class="contents has-text-centered">
                     <p id="bottom">
                         {{imp[1][1]|safe}}
                         <br><br>
