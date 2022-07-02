@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="/views/buma/css/fa-svg-with-js.css">
         <link rel="stylesheet" href="/views/buma/css/layout.css">
         <link rel="stylesheet" href="/views/buma/css/plus.css">
+		<link rel="shortcut icon" href="/views/main_css/favicon.ico">
 		<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+KR">
         <script type="text/javascript" src="/views/buma/js/jquery.min.js"></script>
@@ -310,25 +311,13 @@
                 </div>
             </div>
         </section>
-        <section class="section">
+		<section class="section">
             <div class="container">
 				<div id="fix_data" class="col-md-10 col-md-offset-1 mar-b-30">
                 	{{data|safe}}
 				</div>
             </div>
-            <div id="nav_bar">
-                <div id="go_top">
-                    <a id="go_top" href="#top">
-                        <div class="fas fa-arrow-up"></div>
-                    </a>                  
-                </div>
-                <div id="go_bottom">
-                    <a id="go_bottom" href="#bottom">
-                        <div class="fas fa-arrow-down"></div>
-                    </a>
-                </div>                   
-            </div>
-        </section>
+		</section>
         <footer class="footer">
             <div class="container">
                 <div class="contents has-text-centered">
@@ -340,5 +329,13 @@
                 </div>
             </div>
         </footer>
+        <div id="nav_bar">
+            <a id="go_top" href="#top">
+                <div class="fas fa-arrow-up"></div>
+            </a>
+            <a id="go_bottom" href="#bottom">
+                <div class="fas fa-arrow-down"></div>
+            </a>                  
+        </div>
     </body>
 </html>

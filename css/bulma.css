@@ -1155,11 +1155,11 @@ a.has-text-danger:hover, a.has-text-danger:focus {
   }
 }
 
-@media screen and (max-width: 1023px) {
+/* @media screen and (max-width: 1023px) {
   .is-hidden-touch {
     display: none !important;
   }
-}
+} */
 
 @media screen and (min-width: 1024px) {
   .is-hidden-desktop {
@@ -7074,7 +7074,7 @@ html.has-navbar-fixed-bottom {
   color: #4a4a4a;
   display: block;
   line-height: 1.5;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   position: relative;
 }
 
