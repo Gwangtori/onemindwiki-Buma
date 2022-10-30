@@ -30,7 +30,6 @@ li,
 dl,
 dt,
 dd,
-blockquote,
 figure,
 fieldset,
 legend,
@@ -46,6 +45,10 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
+}
+
+blockquote {
+  border-left: 5px solid #00d1b2;
 }
 
 h1,
@@ -136,7 +139,7 @@ button,
 input,
 select,
 textarea {
-  font-family: 'Pretendard','Noto Sans KR','Spoqa Han Sans Neo','맑은 고딕','Apple SD Gothic Neo', sans-serif;
+  font-family: 'Pretendard','맑은 고딕','Apple SD Gothic Neo', sans-serif;
 }
 
 code,
@@ -148,7 +151,7 @@ pre {
 
 body {
   color: #4a4a4a;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -176,11 +179,7 @@ code {
 }
 
 hr {
-  background-color: #dbdbdb;
-  border: none;
-  display: block;
-  height: 1px;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 img {
@@ -1299,8 +1298,7 @@ a.box:active {
 }
 
 .button {
-  -moz-appearance: none;
-  -webkit-appearance: none;
+  appearance: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2771,8 +2769,7 @@ a.box:active {
 
 .input,
 .textarea {
-  -moz-appearance: none;
-  -webkit-appearance: none;
+  appearance: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -3151,8 +3148,7 @@ a.box:active {
 }
 
 .select select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
+  appearance: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -3174,7 +3170,7 @@ a.box:active {
   padding-right: calc(0.625em - 1px);
   padding-top: calc(0.375em - 1px);
   position: relative;
-  vertical-align: top;
+  display: block;
   background-color: white;
   border-color: #dbdbdb;
   color: #363636;
@@ -3850,8 +3846,7 @@ a.box:active {
 
 .file-cta,
 .file-name {
-  -moz-appearance: none;
-  -webkit-appearance: none;
+  appearance: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -4557,8 +4552,7 @@ a.box:active {
 }
 
 .progress {
-  -moz-appearance: none;
-  -webkit-appearance: none;
+  appearance: none;
   border: none;
   border-radius: 290486px;
   display: block;
@@ -5231,8 +5225,7 @@ a.tag:hover {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
+  appearance: none;
   background-color: rgba(10, 10, 10, 0.2);
   border: none;
   border-radius: 290486px;
@@ -6250,8 +6243,7 @@ a.dropdown-item.is-active {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
+  appearance: none;
   background-color: rgba(10, 10, 10, 0.2);
   border: none;
   border-radius: 290486px;
@@ -7451,8 +7443,7 @@ a.navbar-link.is-active {
 .pagination-next,
 .pagination-link,
 .pagination-ellipsis {
-  -moz-appearance: none;
-  -webkit-appearance: none;
+  appearance: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
