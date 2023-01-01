@@ -1,6 +1,6 @@
 {
     "name" : "Buma",
-    "skin_ver" : "v1.3",
-    "require_ver" : "3500101",
-    "info_link" : "https://raw.githubusercontent.com/Gwangtori/onemindwiki-Buma/master/info.json"
+    "skin_ver" : "v1.4",
+    "require_ver" : "3500111",
+    "info_link" : "https://raw.githubusercontent.com/onemindwiki/Buma-skin/main/info.json"
 } 

@@ -7,21 +7,26 @@
         {% else %}
             <title>{{imp[0]}} - {{imp[1][0]}}</title>
         {% endif %}
-		{{imp[3][3]|safe}}
-		<link rel="stylesheet" href="/views/buma/css/pretendard.css">
         <link rel="stylesheet" href="/views/buma/css/bootstrap-custom.css">
-        <link rel="stylesheet" href="/views/buma/css/bulma.css">
-        <link rel="stylesheet" href="/views/buma/css/bulma.css.map">
         <link rel="stylesheet" href="/views/buma/css/jquery-ui.min.css">
         <link rel="stylesheet" href="/views/buma/css/fa-svg-with-js.css">
+		{{imp[3][3]|safe}}
+        <link rel="stylesheet" href="/views/buma/css/bulma.css">
+        <link rel="stylesheet" href="/views/buma/css/bulma.css.map">
+		<link rel="stylesheet" href="/views/buma/css/more.css">
         <link rel="stylesheet" href="/views/buma/css/layout.css">
         <link rel="stylesheet" href="/views/buma/css/plus.css">
-		<link rel="shortcut icon" href="/views/main_css/favicon.ico">
+        {% if request.cookies.get('main_css_darkmode', '') == '1' %}
+            <link rel="stylesheet" href="/views/main_css/css/sub/dark.css?ver=4">
+            <link rel="stylesheet" href="/views/buma/css/dark.css?ver=4">
+        {% endif %}
+		<link rel="shortcut icon" href="/image/favicon.ico">
         <script type="text/javascript" src="/views/buma/js/jquery.min.js"></script>
         <script type="text/javascript" src="/views/buma/js/jquery-ui.min.js"></script>
         <script type="text/javascript" src="/views/buma/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="/views/buma/js/layout.js"></script>
         <script type="text/javascript" src="/views/buma/js/all.min.js"></script>
+		<script type="text/javascript" src="/views/buma/js/skin_set.js"></script>
         {{imp[1][5]|safe}}
         {{imp[2][3]|safe}}
         {% if imp[3][0] != 0 %}
@@ -33,7 +38,8 @@
         {% if imp[2][12] != 0 and imp[2][12] == 'w' %}
             <meta name="description" content="{{data|cut_100}}">
         {% endif %}
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta property="og:type" content="website">
     </head>
     <body class="buma">
         <div id="top" class="nav navbar" role="navigation" aria-label="main navigation">
@@ -59,7 +65,7 @@
                         <a href="#" class="navbar-link">
                             <span class="icon">
                                 <i class="fas fa-cogs"></i>
-                            </span> 도구</a>
+                            </span> {{'tool'|load_lang}}</a>
                         <div class="navbar-dropdown">
                             <a class="dropdown-item" href="/skin_set"><span class="fa fa-cog"></span><span class="hide-title"> {{'skin_set'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/upload"><span class="fa fa-upload"></span><span class="hide-title"> {{'upload'|load_lang}}</span></a>
@@ -93,7 +99,7 @@
 			</span>
 		    </div>
 		    <div class="control">
-		        <button class="button" method="post" type="submit" formaction="/search"><i class="fas fa-search"></i></button>
+		        <button class="button" method="post" type="submit" formaction="/goto"><i class="fas fa-search"></i></button>
 		    </div>
 		    <div class="control">
 		        <a href="/random" class="button" id="wikiGoRandomBtn">
@@ -110,9 +116,11 @@
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a href="#" class="navbar-link">
 				{% if imp[2][2] == 1 %}
+					<span class="nav-icon">
 					<i class="fas fa-user"></i>
 					</span> {{imp[2][5]}}</a>
 				{% else %}
+					<span class="nav-icon">
 					<i class="fas fa-user-secret"></i>
 					</span>Guest</a>
 				{% endif %}
@@ -192,7 +200,7 @@
             <div class="hero-foot">
                 <div class="container">
                     <div class="tabs is-left is-boxed" id="wiki-article-menu">
-                        <ul>
+                        <ul id="wiki-menu">
                             {% if imp[3][0] != '(편집)' and
 				imp[3][1] == 0 and
 				imp[3][0] != '(이동)' and
@@ -213,7 +221,7 @@
 					</a>
 				</li>
 				{% else %}
-					<ul>
+					<ul id="wiki-menu">
 						<li{% if imp[3][1] != 0 %} class="is-active"{% endif %}>
 							<a href="/w/{{imp[0]}}">
 								<span class="icon">
@@ -297,7 +305,7 @@
                     <p id="bottom">
                         {{imp[1][1]|safe}}
                         <br><br>
-                        theseed-skin-buma by <a href="https://github.com/LiteHell/theseed-skin-buma">LiteHell</a>, <a href="https://github.com/openNAMU/openNAMU">openNAMU</a> by <a href="https://github.com/surplus-dev">surplus-dev</a>
+                        <a href="https://github.com/onemindwiki/Buma-skin">Buma</a> | <a href="https://github.com/openNAMU/openNAMU">openNAMU</a>
                     </p>
                 </div>
             </div>
@@ -310,5 +318,6 @@
                 <div class="fas fa-arrow-down"></div>
             </a>                  
         </div>
+		<script>window.addEventListener('DOMContentLoaded', skin_set);</script>
     </body>
 </html>

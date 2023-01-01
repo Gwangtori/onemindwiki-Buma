@@ -1,11 +1,9 @@
 table {
-    background-color: #f5f5f5;
     border-collapse: collapse;
 }
 
 td {
     padding: 5px 10px;
-    border: 1px solid #dddddd;
 }
 
 #toc {
@@ -30,18 +28,6 @@ td {
 
 #inside {
     color: #008000;
-}
-
-#out_link {
-    color: #008000;
-}
-
-#out_link::before {
-    padding: 1px;
-    background: green;
-    color: white;
-    content: "🧷";
-    font-size: 0.7rem;
 }
 
 input, textarea {
@@ -100,25 +86,6 @@ button#save:hover {
     margin-left: 10px;
 }
 
-.section .container ul {
-    list-style: disc outside;
-    margin-bottom: 1em;
-    margin: .4em 0 .4em 1.5em;
-}
-
-.section .container ul li {
-    margin: .4em 0;
-    list-style: inherit !important;
-    list-style-type: inherit;
-    list-style-type: inherit !important;
-}
-
-.section .container h1, h2, h3, h4, h5, h6 {
-    border-bottom: 1px solid #ccc;
-    margin: 0.3em 0 0.5em;
-    padding-bottom: 5px;
-}
-
 .section .container h1 {
     font-size: 2.3em;
 }
@@ -144,20 +111,21 @@ button#save:hover {
 }
 
 .title, .subtitle {
+    margin: 0;
     border-bottom: none;
     padding-bottom: 0px;
 }
 
-#cate {
-	border: 1px solid #ccc !important;
-    border-radius: 4px !important;
-    font-size: .9rem;
-    margin-bottom: 1em !important;
-    padding: 5px 5px 5px 7px !important;
+.title {
+    padding-bottom: 4px;
 }
 
-#topic_top_title {
-    margin-bottom: 10px;
+ul#wiki-menu li {
+    margin: 0;
+}
+
+ul {
+    list-style-image: url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%225%22%20height%3D%2213%22%3E%0A%3Ccircle%20cx%3D%222.5%22%20cy%3D%229.5%22%20r%3D%222.5%22%20fill%3D%22%23373a3c%22%2F%3E%0A%3C%2Fsvg%3E%0A);
 }
 
 select {
@@ -203,18 +171,6 @@ select {
     box-sizing: inherit;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-#redirect {
-    background-color: #d9edf7;
-    border: 1px solid #bcdff1;
-    border-radius: 0.25rem;
-    color: #31708f;
-    font-size: .9rem;
-    margin-bottom: 1.2rem;
-    padding: 0.5rem 0.8rem;
-    display: inline-block;
-    width: 100%;
+.nav-icon {
+    margin: 0 0.35rem;
 }
